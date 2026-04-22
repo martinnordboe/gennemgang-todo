@@ -1,0 +1,41 @@
+﻿<Window x:Class="TodoApp.EditToDoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TodoApp"
+        mc:Ignorable="d"
+        Title="EditToDoWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontSize="40" Text="Tilføj 'To Do'"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label FontSize="16"  Content="Indsæt titel"/>
+            <TextBox x:Name="TextBoxTitle" Padding="10" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label FontSize="16"  Content="Indsæt dato for deadline"/>
+            <!--<TextBox x:Name="TextBoxTitle" Padding="10" />-->
+            <DatePicker x:Name="DeadlineDatePicker"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" Margin="20">
+            <Button x:Name="EditToDoItemButton" Background="LimeGreen" Width="200" Height="25" Click="EditToDoItemButton_Click">Tilføj</Button>
+        </StackPanel>
+    </Grid>
+</Window>
